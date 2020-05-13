@@ -28,10 +28,10 @@ In the meantime, you can install it cloning this repository and running
 *Stear Keyboard* install a command line utility with the same name, `stear-keyboard`, which has to run on both the client (the device sharing the keyboard) and the server (the device receiving the input). At first run it will generate a GPG keyring with a default key having passphrase *test* in the user configuration directory. You will have to export (or copy) such keyring on the devices which have to interoperate. Of course you can add as many keys as you want.
 
 ```bash
-# On server
+# On server (as root on GNU)
 stear-keyboard server test
 
-# On client
+# On client (as user)
 stear-keyboard client stearkeyboard@arcipelago.ml <host>
 ```
 
