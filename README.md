@@ -11,6 +11,8 @@ It has mainly been written for the fictional do-it-yourself, n900-like, GNOME Mo
 
 *It is not recommended at this stage* (and probably never will) *to run it on public networks*, because even with encryption an attacker can still infer what are you writing from the keystroke sequences. That can of course be mitigated but I do not plan to do it soon.
 
+Also code quality is really poor, because I wrote it right away as a prototype and I still do not have power management constraints.
+
 ## Installation
 
 *Stear Keyboard* will soon be available through the [Python Package Index (PyPI)](https://pypi.org/). Pip is pre-installed if `python >= 3.4` has been downloaded from [python.org](https://python.org); if you're using a GNU/Linux distribution, you can find how to install it on this [page](https://packaging.python.org/guides/installing-using-linux-tools/#installing-pip-setuptools-wheel-with-linux-package-managers).
