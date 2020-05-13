@@ -12,11 +12,15 @@ It has mainly been written for the fictional do-it-yourself, n900-like, GNOME Mo
 
 ## Installation
 
-*Stear Keyboard* is available through the [Python Package Index (PyPI)](https://pypi.org/). Pip is pre-installed if `python >= 3.4` has been downloaded from [python.org](https://python.org); if you're using a GNU/Linux distribution, you can find how to install it on this [page](https://packaging.python.org/guides/installing-using-linux-tools/#installing-pip-setuptools-wheel-with-linux-package-managers).
+*Stear Keyboard* will soon be available through the [Python Package Index (PyPI)](https://pypi.org/). Pip is pre-installed if `python >= 3.4` has been downloaded from [python.org](https://python.org); if you're using a GNU/Linux distribution, you can find how to install it on this [page](https://packaging.python.org/guides/installing-using-linux-tools/#installing-pip-setuptools-wheel-with-linux-package-managers).
 
-After setting up pip, you can install *Stear Keyboard* by simply typing in your terminal
+After setting up pip, you will be able to install *Stear Keyboard* by simply typing in your terminal
 
     # pip3 install stear-keyboard
+
+In the meantime, you can install it cloning this repository and running
+
+    # sudo python3 setup.py install
 
 ## Usage
 
