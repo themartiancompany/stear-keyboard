@@ -93,9 +93,6 @@ class Client:
                         print("sending {}".format(payload))
                         print(encrypted_data)
                         sys.stdout.flush()
-                    if self.debug:
-                        print(encrypted_data)
-                        sys.stdout.flush()
                     connection = self.send(encrypted_data)
                     #connection.sendall(str(encrypted_data).encode())
                     del self.char_queue[0]

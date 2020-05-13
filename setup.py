@@ -20,8 +20,8 @@ setup(
     },
     install_requires = [
     'appdirs',
-    'gnupg',
     'keyboard',
+    'python-gnupg',
     'setproctitle',
     ],
     classifiers = [

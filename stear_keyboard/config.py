@@ -69,7 +69,7 @@ class Config:
                 mkdirs(join(path, 'gnupg'), mode=0o700)
 
     def gpg_new(self):
-        return gnupg.GPG(homedir=join(self.dirs['config'], 'gnupg'), use_agent=True)
+        return gnupg.GPG(gnupghome=join(self.dirs['config'], 'gnupg'), use_agent=True)
 
     def set_gpg(self):
         self.gpg = self.gpg_new()
@@ -79,13 +79,19 @@ class Config:
                           'expire_date': '2022-04-01',
                           'key_type': 'RSA',
                           'key_length': 1024,
-                          'key_usage': '',
-                          'subkey_type': 'RSA',
-                          'subkey_length': 1024,
-                          'subkey_usage': 'encrypt,sign,auth',
+                          'key_usage': 'encrypt,sign,auth',
                           'passphrase': 'test'}
-            key_input = self.gpg.gen_key_input(**key_input)
-            result = self.gpg.gen_key(key_input)
+            gnupg_key_input = self.gpg.gen_key_input(**key_input)
+            key = self.gpg.gen_key(gnupg_key_input)
+            ascii_armored_public_keys = self.gpg.export_keys(key.fingerprint)
+            ascii_armored_private_keys = self.gpg.export_keys(
+                keyids=key.fingerprint,
+                secret=True,
+                passphrase='test',
+            )
+            import_result = self.gpg.import_keys(ascii_armored_public_keys + ascii_armored_private_keys)
+            for k in import_result.results:
+                print(k)
             print(("Remember to copy the GPG configuration directory"
                    "(~/.config/stear-keyboard/gnupg) on server, too"))
 

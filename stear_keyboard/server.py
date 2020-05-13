@@ -23,6 +23,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
+import keyboard
 import sys
 from getpass import getpass
 from pprint import pprint
@@ -101,11 +102,15 @@ class Server:
                         #print(decrypted_data.stderr)
                         print(decrypted_data)
                         #stdout.flush()
+                    keyboard.write(decrypted_data.data.decode('utf-8'))
                     del self.char_queue[0]
                 except ValueError as e:
                     #print(e)
                     pass
-            sleep(2)
+            if self.verbose:
+                sleep(2)
+            else:
+                sleep(0.5)
 
 
 if __name__ == '__main__':
