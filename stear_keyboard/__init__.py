@@ -75,7 +75,7 @@ def main():
             'kwargs': {'nargs': 1,
                        'action': 'store',
                        'default': [15400],
-                       'help': "port on which the server is listening"}}
+                       'help': "port on which the server is listening (default: 15400)"}}
 
 
     client.add_argument(*email['args'], **email['kwargs'])
